@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . /app
 
 # Install system dependencies (if needed)
-# RUN apt-get update && apt-get install -y some-needed-library
+# RUN apt-get update && apt-get install -y pip
 
 # Install Python packages specified in requirements.txt
 RUN pip3 install --no-cache-dir -r requirements.txt
@@ -17,8 +17,8 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 EXPOSE 4000
 
 # Define environment variable for uvicorn
-ENV UVICORN_HOST=127.0.0.1
+ENV UVICORN_HOST=0.0.0.0
 ENV UVICORN_PORT=4000
 
 # Run the API using uvicorn when the container launches
-CMD ["uvicorn", "app.model.model_api:app", "--host", "127.0.0.1", "--port", "4000"]
+CMD ["uvicorn", "app.model.model_api:app", "--host", "0.0.0.0", "--port", "4000"]
