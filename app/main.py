@@ -35,7 +35,7 @@ def main():
     run_command("python3 ./app/model/vit_fire_detection.py")
 
     # Build the Docker image
-    run_command("docker build -t vit_fire_detection .")
+    run_command("docker build --no-cache -t vit-fire-detection .")
 
 
 if __name__ == "__main__":
