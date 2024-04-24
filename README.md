@@ -6,4 +6,4 @@
 
 ## Command to run the Docker image
 
-```docker run -p 4000:4000 vit-fire-detection```
+```docker run -p 4000:4000 --name vit-fire-detection vit-fire-detection```
