@@ -46,9 +46,9 @@ def predict_url(request: ImageURL):
 
 
 @app.post("/predict_file", response_model=PredictionResponse)
-def predict_file(file: UploadFile = File(...)):
+async def predict_file(file: UploadFile = File(...)):
     # Read the image from the uploaded file
-    image_data = file.read()
+    image_data = await file.read()
     image = Image.open(io.BytesIO(image_data))
 
     # Process the image with the feature extractor
